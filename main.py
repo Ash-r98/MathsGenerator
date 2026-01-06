@@ -33,10 +33,18 @@ divisormin = 1
 divisormax = 50
 
 score = 0
+scoregoal = 5
+scoregoalflag = True
+cmd = 0
+result = None
 
 run = True
 while run:
 
+    if scoregoalflag:
+        print(f"Goal: {scoregoal}")
+    else:
+        print("Endless Mode")
     print(f"Score: {score}")
 
     chosenmechanic = allmechlist[randint(0, len(allmechlist)-1)]
@@ -85,3 +93,12 @@ while run:
         print("Correct!\n")
     else:
         print(f"Incorrect, the correct answer was {result}\n")
+
+    if score >= scoregoal and scoregoalflag:
+        print("Congratulations!")
+        scoregoalflagconfirm = input("Would you like to continue playing? Leave empty if no\n")
+        if scoregoalflagconfirm == '':
+            run = False
+        else:
+            scoregoalflag = False
+            print("Goal has been removed. Good luck\n")
