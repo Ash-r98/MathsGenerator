@@ -1,6 +1,17 @@
 from random import randint
 from time import sleep
 
+def intinputvalidate(prompt):
+    while True:
+        cmd = input(prompt)
+        try:
+            cmd = int(cmd)
+            break
+        except:
+            print("Invalid input")
+    return cmd
+
+
 # 1 = Addition/Subtraction, 2 = Multiplication/Division
 mechanics = [1, 2]
 mech1 = ['+', '-']
@@ -33,7 +44,7 @@ divisormin = 1
 divisormax = 50
 
 score = 0
-scoregoal = 5
+scoregoal = intinputvalidate("Input score goal:\n")
 scoregoalflag = True
 cmd = 0
 result = None
