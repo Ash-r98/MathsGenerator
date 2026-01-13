@@ -95,7 +95,7 @@ while run:
 
             cmd = input(f"{dividend} / {divisor} = ")
 
-        case '_':
+        case _:
             cmd = 0
             result = None
 
