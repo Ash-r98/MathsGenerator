@@ -1,5 +1,5 @@
 from random import randint
-from time import sleep
+from datetime import datetime, timedelta
 
 def intinputvalidate(prompt):
     while True:
@@ -48,6 +48,8 @@ scoregoal = intinputvalidate("Input score goal:\n")
 scoregoalflag = True
 cmd = 0
 result = None
+
+starttime = datetime.now()
 
 run = True
 while run:
@@ -107,6 +109,9 @@ while run:
 
     if score >= scoregoal and scoregoalflag:
         print("Congratulations!")
+        endtime = datetime.now()
+        timerecord = endtime - starttime
+        print(f"Your time was {timerecord}")
         scoregoalflagconfirm = input("Would you like to continue playing? Leave empty if no\n")
         if scoregoalflagconfirm == '':
             run = False
