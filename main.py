@@ -35,7 +35,7 @@ minuendmax = 999
 subtrahendmin = 1
 subtrahendmax = 999
 # Multiplication
-multmin = 1
+multmin = 2
 multmax = 30
 # Division
 dividendmin = 1
